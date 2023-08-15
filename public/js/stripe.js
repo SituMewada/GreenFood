@@ -32,7 +32,7 @@ orderBtn.addEventListener('click',(e)=>{
     e.preventDefault();
     
     e.target.textContent='Processing...';
-    console.log(order_address,order_pNumber,order_quantity);
+   // console.log(order_address,order_pNumber,order_quantity);
     const pNumber=order_pNumber.value;
     const address=order_address.value;
     const quantity=order_quantity.value;

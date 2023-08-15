@@ -31,7 +31,7 @@ inputPic.onchange=async()=>{
     let form=new FormData();
     form.append('photo', inputPic.files[0]);
 
-    console.log(inputPic.files[0]);
+  //  console.log(inputPic.files[0]);
     try{
     const res=await axios({
         method:"PATCH", 

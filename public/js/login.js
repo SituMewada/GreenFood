@@ -44,7 +44,7 @@ const loginForm=document.querySelector('.login_button');
         e.preventDefault();
         const email=document.querySelector('.input_email').value;
         const password=document.querySelector('.input_password').value;
-        console.log(email,password);
+      //  console.log(email,password);
         
         login(email,password);
     })
