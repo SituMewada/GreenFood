@@ -11,7 +11,7 @@ const orderMenu=async (menuId,pNumber,address,quantity)=>{
     //1)Get the checkout session from API
     const session=await axios({
         method:'POST',
-        url:`http://127.0.0.1:3000/api/v1/orders/checkout-session/${menuId}`,
+        url:`/api/v1/orders/checkout-session/${menuId}`,
         data:{
             pNumber,
             address,
