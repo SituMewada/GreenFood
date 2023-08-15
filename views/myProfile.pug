@@ -1,0 +1,50 @@
+extends base
+block content
+    include _header
+    main.profile_main
+      .settings
+        h3.settings_h3 SETTINGS
+        .settings_features#editProfile Edit Profile
+        |  
+        .settings_features#myOrder My Order
+        |  
+        .settings_features Refund
+        .settings_features Feedback
+      .my_orders
+        .upload_user_image
+          // <h3 class="uploader_user_name">Jonash</h3>
+          img.uplode_image_profile(src=`/img/user/${user.photo?user.photo:'profile.webp'}`)
+          label.input_user_image_label(for='input_file') UPDATE IMAGE
+          input#input_file.input_user_profile(type='file',name='photo', accept='image/jpeg, image/png, image/jpg')
+        each order in orders
+          .pre_order_details
+            .pre_order_img_price
+              img.pre_order_img(src='/img/menu/food-1.jpg')
+              .pre_order_price_name
+                h3=order.name
+                p.price_pera
+                  span.price_money
+                    b=`₹${order.price}`
+            .order_date
+              span(style='font-weight: 600;') 1 day ago
+              br
+            p.pre_order_address=order.address
+    footer.footer(style='background-color:black;')
+      .footer_data
+        .footer_logo
+          img.footer_img(alt='logo', src='/img/green-food.png')
+        .footer_links
+          span
+            a(href='#') About us
+          span
+            a(href='#') Download app
+          span
+            a(href='#') Contact
+          |  
+          span
+            a(href='#') Join us
+      .copy_right
+        p
+          a(href='#') &copy; 2023 by Sitaram Mewada&#x2764;&#xFE0F;
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js')
+    script(defer src='/js/profile.js')

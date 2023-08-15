@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title GreenFood
+  link(rel='icon' href='/img/favicon.png')
+  link(rel='stylesheet' href='/css/login.css')
+body
+    main.main
+      .login_div
+        img.greenFood_logo(src='/img/green-food.png' alt='logo')
+        p.welcome_heading Welcome to GreenFood
+        form.login_form
+          input.input.input_email(type='email' placeholder='Email')
+          br
+          input.input.input_password(type='password' placeholder='••••••••')
+          br
+        p.forget_pass-pera
+          i forget password?
+        button.login_button LOG IN
+        .line
+        p.signup_pera
+          | Create new account?
+          span.signup_span  SIGN UP
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js')
+    script(type='module', src='/js/login.js')

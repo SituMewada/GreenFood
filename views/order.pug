@@ -1,0 +1,102 @@
+include _reviewsCard
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title GreenFood
+    link(rel='icon', href='/img/favicon.png')
+    link(rel='stylesheet', href='/css/index.css')
+    script(src='https://js.stripe.com/v3/')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js')
+    script(src='https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js')
+    script(defer src='/js/stripe.js')
+    script(defer src='/js/index.js')
+    script(defer src='/js/login.js')
+  body(style='background-color:#f3f3f3;')
+    .head_div(style='height:auto;')
+        header.header
+            a(href='/')
+              img.img_logo(src='/img/Food-logo.png' alt='logo')
+            .header_div
+                nav.navbar
+                    ul.navbar-list
+                        li
+                            a.navbar_link.border_buttom(href='/') HOME
+                        li
+                            a.navbar_link(href='#') ABOUT
+                        li
+                            a.navbar_link(href='#') CONTACT
+                        .button_span
+                            if user
+                                button.login.logout_btn LOG OUT
+                                .user_profile_dp_div
+                                    img.user_profile_dp(src=`/img/user/${user.photo?user.photo:'profile.webp'}` alt='user')
+                                    .dropdown_list
+                                        div  
+                                          a(href='/my' style='color:black;') My Profile
+                                        div Password reset
+                                        div Message
+                                        div Help
+                            else
+                                button.login
+                                    a(href='/login') LOGIN
+                                button.signup SIGN UP
+                .mobile-navbar-btn
+                    iconify-icon.mobile_nav_icon(name='menu-outline' style='color: white;' width='40' height='40' icon='ic:baseline-menu')
+                    iconify-icon.mobile_nav_icon(name='close-outline' style='color: black;' width='40' height='40' icon='ic:round-close')
+    main.order_main
+        .order_div
+            .order_main_div
+                .order_img_div
+                    p.order_food_name
+                        //- span.first=`${menu.name}`
+                    //-     br
+                    //-     span.second=`${menu.name.split(' ')[1]}`
+                    img.order_img(src=`/img/menu/${menu.image}`, alt='food')
+                //- .order_description
+                //-     p.order_desc=menu.description
+                section.description-section
+                    .description_title=menu.name
+                    .description-circle
+                    .description_full Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia dolorem, quaerat explicabo delectus eaque possimus, distinctio, debitis quo magni nobis rem? Rerum, enim nobis quasi maxime ducimus molestiae expedita quisquam.
+                .order_form_div
+                    form.order_form
+                        .order_form_input_div
+                            input(type='text' placeholder='Name')
+                            input.order_pNumber(type='tel' placeholder='Phone number' required)
+                            br
+                            input.order_quantity(type='number' min='1', placeholder='Quantity' required)
+                            input.order_location(type='text' placeholder='Address' required)
+                            br 
+                        span.order_total_price=`Total - ₹${menu.price}`
+                        button.order_btn#order-menu(data-menu-id=`${menu.id}`) Order
+                section.reviews-container
+                  .left-arrow ←
+                    //- <iconify-icon icon="guidance:right-arrow" width="80" height="50"></iconify-icon>
+                  .right-arrow →
+                    //- <iconify-icon icon="guidance:right-arrow" width="80" height="50" rotate="180deg"></iconify-icon>
+                  .reviews(div='')
+                        +reviewsCard
+                        +reviewsCard
+                        +reviewsCard
+                        +reviewsCard
+                        +reviewsCard
+        footer.footer
+            .footer_data
+                .footer_logo
+                    img.footer_img(alt='logo', src='../img/green-food.png')
+                .footer_links
+                    span
+                        a(href='#') About us
+                    span
+                        a(href='#') Download app
+                    span
+                        a(href='#') Contact
+                    |  
+                    span
+                        a(href='#') Join us
+            .copy_right
+                p
+                  a(href='#') &copy; 2023 by Sitaram Mewada❤️

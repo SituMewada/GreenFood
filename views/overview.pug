@@ -1,0 +1,31 @@
+extends base_ovr
+
+block content
+    section.section-hero
+    
+           each menu in menus
+                .card
+                    .card_img_div
+                    img.card_img(src=`/img/menu/${menu.image}` alt=`${menu.name}`)
+                    .card_data
+                    h5.food_name= menu.name
+                    p.food_category= menu.menuType
+                    .kacl_div
+                        span
+                            iconify-icon.card_fire_kcal(icon='mdi:fire' width='25' height='25' style='color: black;')
+                            span.kcalary= `${menu.calorieFrom}-${menu.calorieTo} Kcal`  
+                        span.veg_nonveg= menu.category
+                    .pricing
+                        .price_btn
+                            p.price_pera
+                                span.price_money
+                                    b=`₹${menu.price}`
+                                    |  per person
+                            button.details_btn 
+                                a(href=`/menu/${menu.slug}`) DETAILS
+                        p.rating_pera
+                        span.rating
+                            b=menu.ratingsAverage
+                        |  rating (11)
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+     

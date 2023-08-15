@@ -1,0 +1,32 @@
+.head_div
+  header.header
+    a(href='/')
+      img.img_logo(src='/img/Food-logo.png' alt='logo')
+    .header_div
+      nav.navbar
+        ul.navbar-list
+          li
+            a.navbar_link.border_buttom(href='/') HOME
+          li
+            a.navbar_link(href='#') ABOUT
+          li
+            a.navbar_link(href='#') CONTACT
+          .button_span
+            if user
+              button.login.logout_btn LOG OUT
+              .user_profile_dp_div
+                img.user_profile_dp(src=`/img/user/${user.photo?user.photo:'profile.webp'}` alt='user')
+                .dropdown_list
+                  div
+                    a(href='/my' style='color:black;') My Profile
+                  div Password reset
+                  div Message
+                  div Help
+            else 
+              button.login
+                a(href='/login') LOGIN
+              button.signup SIGN UP
+      .mobile-navbar-btn
+        iconify-icon.mobile_nav_icon(name='menu-outline' style='color: white;' width='40' height='40' icon='ic:baseline-menu')
+        iconify-icon.mobile_nav_icon(name='close-outline' style='color: black;' width='40' height='40' icon='ic:round-close')
+  include _hero_ovr
