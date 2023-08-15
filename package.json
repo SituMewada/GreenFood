@@ -30,5 +30,10 @@
     "slugify": "^1.6.5",
     "stripe": "^12.8.0",
     "validator": "^13.7.0"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
   }
+
 }
