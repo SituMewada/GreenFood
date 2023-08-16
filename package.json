@@ -2,7 +2,7 @@
   "name": "greenfood",
   "version": "1.0.0",
   "description": "Creating GreenFood app, So I can learn something new.",
-  "main": "app.js",
+  "main": "server.js",
   "author": "Sitaram Mewada",
   "license": "ISC",
   "scripts": {
